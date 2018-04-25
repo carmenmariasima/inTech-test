@@ -3,7 +3,7 @@
 }
 
 .navbar-custom{
-    background-color: #5DBCD2;
+    background-color: #4cc4d2;
     
 }
 
@@ -12,20 +12,26 @@
 }
 
 .nav-link {
-    color: #000080;
+    color: #2d6f7b;
     text-transform: uppercase;
     font-weight: 600;
 }
 
 .banner {
-    background-color: teal;
+    background-color: #2d6f7b;
     color: white;
 }
 
 .prices {
-    background-color: darkgrey;
+    background-color: #e8e8e8;
 }
 
 .ourcustomers {
-    background-color: gainsboro;
+    background-color: #e8e8e8;
+}
+
+.footer{
+    background-color: #2d6f7b;
+    height: 80px;
+    
 }
