@@ -1,0 +1,31 @@
+.center{
+    text-align: center;
+}
+
+.navbar-custom{
+    background-color: #5DBCD2;
+    
+}
+
+.nav-link:active{
+    color:aqua;
+}
+
+.nav-link {
+    color: #000080;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.banner {
+    background-color: teal;
+    color: white;
+}
+
+.prices {
+    background-color: darkgrey;
+}
+
+.ourcustomers {
+    background-color: gainsboro;
+}
