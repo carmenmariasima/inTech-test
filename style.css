@@ -33,7 +33,12 @@
 .footer{
     background-color: #2d6f7b;
     height: 80px;
-    
+    color: white;
+    border-top: 2px solid #4cc4d2;
+}
+
+.footer a{
+    color: #4cc4d2;
 }
 
 #carousel {
@@ -43,6 +48,25 @@
     
     overflow: visible;
     white-space:nowrap;
+}
+.prices h3 {
+    color:#2d6f7b;
+    font-weight: 600;
+}
+
+.ourcustomers h3 {
+    color:#2d6f7b;
+    font-weight: 600;
+}
+
+.awards h3 {
+    color:#2d6f7b;
+    font-weight: 600;
+}
+
+.questions h5 {
+    color:#2d6f7b;
+    font-weight: 700;
 }
 
 #carousel .slide {
