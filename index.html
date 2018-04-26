@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>inTech test</title>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300,700|Varela+Round" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="scripts.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -35,7 +35,13 @@
                 <hr/>
                 <div class="row">
                     <div class="col-sm-3">
-                    <img src="img/img1.jpg" width="220" alt="" />
+                    <img id="myImg" src="img/img1.jpg" width="220">
+                    <div id="myModal" class="modal">
+                      <span class="close">&times;</span>
+                      <img class="modal-content">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/Ac2DurZ5LJE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    
                     
                     </div>
                     <div class="col-sm-9">
