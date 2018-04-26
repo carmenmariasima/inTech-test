@@ -6,8 +6,24 @@ body {
     text-align: center;
 }
 
+ @font-face { 
+     font-family: GothamMedium; 
+     src: url('./font/GothamMedium.otf'); 
+} 
+
+@font-face { 
+     font-family: GothamBook; 
+     src: url('./font/GothamBook.otf'); 
+} 
+
+@font-face { 
+     font-family: GothamBold; 
+     src: url('./font/GothamBold.otf'); 
+} 
+
 .navbar-custom{
     background-color: #4cc4d2;
+    font-family: GothamBook;
     
 }
 
@@ -18,11 +34,10 @@ body {
 .nav-link {
     color: #2d6f7b;
     text-transform: uppercase;
-    font-weight: 600;
 }
 
 .banner {
-    background-color: #2d6f7b;
+    background-image: url("img/imgbg.JPG");
     color: white;
 }
 
@@ -50,7 +65,6 @@ body {
 }
 .prices h3 {
     color:#2d6f7b;
-    font-weight: 700;
 }
 .prices h5{
     margin: 0;
@@ -67,7 +81,6 @@ body {
 
 .questions h5 {
     color:#2d6f7b;
-    font-weight: 700;
 }
 
 .ourcustomers {
@@ -76,7 +89,7 @@ body {
 
 .ourcustomers h3 {
     color:#2d6f7b;
-    font-weight: 600;
+    
 }
 
 #carousel {
@@ -94,7 +107,6 @@ body {
 
 .awards h3 {
     color:#2d6f7b;
-    font-weight: 600;
 }
 
 
