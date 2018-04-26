@@ -22,57 +22,6 @@
     color: white;
 }
 
-.prices {
-    background-color: #e8e8e8;
-}
-
-.ourcustomers {
-    background-color: #e8e8e8;
-}
-
-.footer{
-    background-color: #2d6f7b;
-    height: 80px;
-    color: white;
-    border-top: 2px solid #4cc4d2;
-}
-
-.footer a{
-    color: #4cc4d2;
-}
-
-#carousel {
-    width: 100%;
-    height: 150px;
-    background-color: #e8e8e8;
-    
-    overflow: visible;
-    white-space:nowrap;
-}
-.prices h3 {
-    color:#2d6f7b;
-    font-weight: 600;
-}
-
-.ourcustomers h3 {
-    color:#2d6f7b;
-    font-weight: 600;
-}
-
-.awards h3 {
-    color:#2d6f7b;
-    font-weight: 600;
-}
-
-.questions h5 {
-    color:#2d6f7b;
-    font-weight: 700;
-}
-
-#carousel .slide {
-    display: inline-block;
-}
-
 .row.vertical-divider {
   overflow: hidden;
 }
@@ -90,3 +39,71 @@
 .row.vertical-divider div[class^="col-"]:last-child {
   border-right: none;
 }
+
+
+.prices {
+    background-color: #e8e8e8;
+}
+.prices h3 {
+    color:#2d6f7b;
+    font-weight: 700;
+}
+.prices h5{
+    margin: 0;
+    padding: 0;
+    color: #404040;
+}
+
+.prices h1{
+    margin: 0;
+    padding: 0;
+    color: #404040;
+    
+}
+
+.questions h5 {
+    color:#2d6f7b;
+    font-weight: 700;
+}
+
+.ourcustomers {
+    background-color: #e8e8e8;
+}
+
+.ourcustomers h3 {
+    color:#2d6f7b;
+    font-weight: 600;
+}
+
+#carousel {
+    width: 100%;
+    height: 150px;
+    background-color: #e8e8e8;
+    
+    overflow: visible;
+    white-space:nowrap;
+}
+
+#carousel .slide {
+    display: inline-block;
+}
+
+.awards h3 {
+    color:#2d6f7b;
+    font-weight: 600;
+}
+
+
+.footer{
+    background-color: #2d6f7b;
+    height: 80px;
+    color: white;
+    border-top: 2px solid #4cc4d2;
+}
+
+.footer a{
+    color: #4cc4d2;
+}
+
+
+
