@@ -1,31 +1,210 @@
+body {
+  overflow-x: hidden;
+}
+
 .center{
     text-align: center;
 }
 
+ @font-face { 
+     font-family: GothamMedium; 
+     src: url('./font/GothamMedium.otf'); 
+} 
+
+@font-face { 
+     font-family: GothamBook; 
+     src: url('./font/GothamBook.otf'); 
+} 
+
+@font-face { 
+     font-family: GothamBold; 
+     src: url('./font/GothamBold.otf'); 
+} 
+
 .navbar-custom{
-    background-color: #5DBCD2;
+    background-color: #4cc4d2;
+    font-family: GothamBook;
     
 }
 
-.nav-link:active{
-    color:aqua;
-}
-
 .nav-link {
-    color: #000080;
+    color: #2d6f7b;
     text-transform: uppercase;
-    font-weight: 600;
 }
 
 .banner {
-    background-color: teal;
+    background-image: url("img/imgbg.JPG");
     color: white;
 }
 
+.row.vertical-divider {
+  overflow: hidden;
+}
+.row.vertical-divider > div[class^="col-"] {
+  text-align: center;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+  border-left: 1px solid #F2F7F9;
+  border-right: 1px solid #F2F7F9;
+
+}
+.row.vertical-divider div[class^="col-"]:first-child {
+  border-left: none;
+}
+.row.vertical-divider div[class^="col-"]:last-child {
+  border-right: none;
+}
+
+
 .prices {
-    background-color: darkgrey;
+    background-color: #e8e8e8;
+}
+.prices h3 {
+    color:#2d6f7b;
+}
+.prices h5{
+    margin: 0;
+    padding: 0;
+    color: #404040;
+}
+
+.prices h1{
+    margin: 0;
+    padding: 0;
+    color: #404040;
+    
+}
+
+.questions h5 {
+    color:#2d6f7b;
 }
 
 .ourcustomers {
-    background-color: gainsboro;
+    background-color: #e8e8e8;
 }
+
+.ourcustomers h3 {
+    color:#2d6f7b;
+    
+}
+
+#carousel {
+    width: 100%;
+    height: 150px;
+    background-color: #e8e8e8;
+    
+    overflow: visible;
+    white-space:nowrap;
+}
+
+#carousel .slide {
+    display: inline-block;
+}
+
+.awards h3 {
+    color:#2d6f7b;
+}
+
+
+.footer{
+    background-color: #2d6f7b;
+    height: 110px;
+    color: white;
+    border-top: 2px solid #4cc4d2;
+}
+
+.footer a{
+    color: #4cc4d2;
+}
+
+
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.5;
+}
+
+#myImg:hover {
+    opacity: 0.4;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
