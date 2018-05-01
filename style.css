@@ -10,12 +10,16 @@ body {
     background-color: #4cc4d2;
     font-family: 'Montserrat', sans-serif; 
     font-weight: 600;
+    border-bottom: 0;
+    padding-bottom: 0;
 }
 
 .nav-pills > .active > a, .nav-pills > .active > a:enabled{
     background-color: #2d6f7b;
     color: #4cc4d2;
     border-width: 0;
+    padding-bottom: 0;
+    
 }
 
 .nav-link {
