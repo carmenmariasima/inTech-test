@@ -6,25 +6,16 @@ body {
     text-align: center;
 }
 
- @font-face { 
-     font-family: GothamMedium; 
-     src: url('./font/GothamMedium.otf'); 
-} 
-
-@font-face { 
-     font-family: GothamBook; 
-     src: url('./font/GothamBook.otf'); 
-} 
-
-@font-face { 
-     font-family: GothamBold; 
-     src: url('./font/GothamBold.otf'); 
-} 
-
 .navbar-custom{
     background-color: #4cc4d2;
-    font-family: GothamBook;
-    
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:enabled{
+    background-color: #2d6f7b;
+    color: #4cc4d2;
+    border-width: 0;
 }
 
 .nav-link {
@@ -53,6 +44,9 @@ body {
 .row.vertical-divider div[class^="col-"]:last-child {
   border-right: none;
 }
+
+
+
 
 .row.vertical-divider-blue {
   overflow: hidden;
