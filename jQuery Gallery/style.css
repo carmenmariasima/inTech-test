@@ -1,8 +1,9 @@
 #MainDiv
 {
     position: relative;
-    margin: 0 auto;
+    margin: 0;
     overflow: hidden;
+    bottom: 120px;
 }
 
 #child .NextButton
@@ -23,24 +24,22 @@
 
 #Next
 {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 #Next:hover
 {
     cursor: pointer;
-    opacity: 0.8;
 }
 
 #Previous
 {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 #Previous:hover
 {
     cursor: pointer;
-    opacity: 0.8;
 }
  
 #slider
