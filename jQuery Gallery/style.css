@@ -2,7 +2,7 @@
 {
     position: relative;
     margin: 0 auto;
-    width:1200px;
+    overflow: hidden;
 }
 
 #child .NextButton
@@ -24,35 +24,32 @@
 #Next
 {
     opacity: 0.4;
-    filter: alpha(opacity=20);
 }
 
 #Next:hover
 {
     cursor: pointer;
     opacity: 0.8;
-    filter: alpha(opacity=80);
 }
 
 #Previous
 {
     opacity: 0.4;
-    filter: alpha(opacity=20);
 }
 
 #Previous:hover
 {
     cursor: pointer;
     opacity: 0.8;
-    filter: alpha(opacity=80);
 }
  
 #slider
 {
-    width: 1200px;
+
     margin: 0 auto;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    bottom: 0;
 }
 
 #slider .slides

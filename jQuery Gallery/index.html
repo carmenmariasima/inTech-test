@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <title>inTech test</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -8,11 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <script>
     $(document).ready(function () {
 
@@ -38,7 +33,7 @@
                 IndexDiff = CurrImage;
                 CurrImage = ImageIndex;
                 IndexDiff = Math.abs(IndexDiff - CurrImage);
-                $('#slider .slides').animate({ 'margin-left': '-=' + widthImg * IndexDiff }, 1000);
+                $('#slider .slides').animate({ 'margin-left': '-=' + widthImg * IndexDiff }, 4000);
                 $('#MainImage').attr('src', Imagesrc);
 
                 if (ImageIndex != 0) {
@@ -62,7 +57,7 @@
             $('#MainImage').fadeOut('slow', function () {
                 CurrImage = CurrImage + 1; 
                 if (CurrImage <= lengthImages - BottomLength) {
-                    $('#slider .slides').animate({ 'margin-left': '-=' + widthImg }, 1000);
+                    $('#slider .slides').animate({ 'margin-left': '-=' + widthImg }, 000);
                 }
                 $('#MainImage').attr('src', thumbnail_array[CurrImage]);
                 if (CurrImage == lengthImages - BottomLength) {
@@ -77,7 +72,7 @@
     $('#Previous').click(function () {
         $('#MainImage').fadeOut('slow', function () {
             CurrImage = CurrImage - 1;
-            $('#slider .slides').animate({ 'margin-left': '+=' + widthImg }, 1000);
+            $('#slider .slides').animate({ 'margin-left': '+=' + widthImg }, 4000);
             $('#MainImage').attr('src', thumbnail_array[CurrImage]);
             if (CurrImage == 0) {
                 $('#Previous').css("visibility", "hidden");
@@ -112,6 +107,7 @@
 });
     </script>
 </head>
+    
 <body>
    <div>
        <div id="MainDiv">
