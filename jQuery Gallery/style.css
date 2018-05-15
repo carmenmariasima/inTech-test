@@ -3,7 +3,6 @@
     position: relative;
     margin: 0;
     overflow: hidden;
-    bottom: 120px;
 }
 
 #child .NextButton
@@ -44,7 +43,6 @@
  
 #slider
 {
-
     margin: 0 auto;
     overflow: hidden;
     position: fixed;

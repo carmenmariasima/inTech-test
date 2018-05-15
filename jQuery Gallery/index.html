@@ -9,6 +9,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
+    function set_body_height() { 
+    
+    }
     $(document).ready(function () {
 
     var thumbnail_array = $(".slides img").map(function () {
@@ -50,7 +53,7 @@
             else {
                 $('#MainImage').attr('src', Imagesrc);
             }
-            }).fadeIn(3000);
+            }).fadeIn(3000);            
     });
     $('#Next').click(function () {
         
@@ -105,13 +108,22 @@
             });
     }, 3000);
 });
+    function set_body_height() {
+        $('#mainpic img').height($(window).height());
+    }
+    $(document).ready(function() {
+        $(window).bind('resize', set_body_height);
+        set_body_height();
+    });
+    
     </script>
 </head>
     
 <body>
    <div>
        <div id="MainDiv">
-            <img src="img/pic1.jpg" alt="London" id="MainImage"  width="100%"/>
+           <div id="mainpic">
+           <img src="img/pic1.jpg" alt="London" id="MainImage" width="100%"/></div>
             <div id="child">
                 <img id="Next" src="img/rightarrow.png" class="NextButton" style="height: 50px;"/>
                 <img id="Previous" src="img/leftarrow.png" class="PreButton" style="height: 50px;"/>
