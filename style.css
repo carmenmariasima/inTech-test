@@ -2,9 +2,8 @@ html,
 body{
 width:100%;
 overflow-x:hidden;
-}
-.hiddenfordesktop{
-    display: none;
+height: 100%;
+    
 }
 
 .slicknav_menu {
@@ -43,6 +42,12 @@ overflow-x:hidden;
     text-transform: uppercase; 
 }
 
+.background{
+    background-image: url(img/img1.jpg);
+    background-size: contain;
+    z-index: 1;
+}
+
 .dimensiuni{
     width: 285px;
     height: 154px;
@@ -52,14 +57,17 @@ overflow-x:hidden;
 
 .overlay {
    background:cyan;
-   opacity:.5;
+   opacity:.6;
+   z-index: 2;
+   filter: alpha(opacity=30);
 
 }
 
 hr {
-    height: 3px;
+    height: 1px;
     color: #4cc4d1;
     background-color: #4cc4d1;
+    padding: 1px;
     border: none;
 }
 
@@ -83,13 +91,14 @@ hr {
 .banner h6{
     font-family: 'Montserrat', sans-serif; 
     font-weight: 500;
+    font-size: 15px;
 }
 
 .button {
     background-color: #d45f59;
     border: none;
     color: white;
-    padding: 21px 17px;
+    padding: 15px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -202,6 +211,7 @@ hr {
     color:#2d6f7b;
     font-family: 'Montserrat', sans-serif; 
     font-weight: 700;
+
 }
 
 .questions p{
@@ -229,8 +239,9 @@ hr {
 }
 
 .footer{
+    bottom: 0;
     background-color: #2d707b;
-    height: 124px;
+    height: 144px;
     color: white;
     border-top: 3px solid #4cc4d2;
 }
@@ -252,6 +263,17 @@ hr {
     font-size: 17px; 
     text-transform: uppercase;
 }
+
+.your-class .slick-prev:before {
+  color: black !important;
+}
+.your-class .slick-next:before {
+  color: black !important;
+}
+
+.your-class .slick-dots li button:before {
+    display: none;
+  }
 
 /*mobile*/
 @media only screen and (max-width: 600px)
@@ -415,10 +437,35 @@ hr {
 /*tableta*/
 @media only screen 
 and (min-width :601px)
-and (max-width :1024px){
+and (max-width :1200px){
     img{
        max-width: 100%;
     }
+
+    .tabletbanner{
+    background-image: url("img/imgbg.JPG");
+    color: white;
+}
+
+    .tabletbanner h2{
+        font-family: 'Montserrat', sans-serif; 
+        font-weight: 700; 
+        letter-spacing: -0.34px;
+    }
+
+    .tabletbanner h4{
+        font-family: 'Montserrat', sans-serif; 
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    .tabletbanner a{
+        color:white;
+    }
+    .tabletbanner h6{
+        font-family: 'Montserrat', sans-serif; 
+        font-weight: 500;
+    }
+
     
     .tabletfooter{
         background-color: #2d707b;
@@ -443,6 +490,9 @@ and (max-width :1024px){
         display: inline-block;
     }
     
+    .tabletprices a{
+        color: white;
+    }
     
     .tabletfooter p{
         font-weight: 500;

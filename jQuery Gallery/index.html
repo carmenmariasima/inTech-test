@@ -12,6 +12,18 @@
     function set_body_height() { 
     
     }
+        
+    function myintervalfunction() {
+        $('#slider .slides').animate({ 'margin-left': '-=210' }, 10000,
+        function () {
+            if (CurrSlides == allslides) CurrSlides = 0;
+                else CurrSlides += 1;
+        CurrSlides += 1;
+        if (CurrSlides === thumbnail_array.length-2) {
+            $('#slider .slides').css('margin-left', '10');
+        }
+    });
+    };
     $(document).ready(function () {
 
     var thumbnail_array = $(".slides img").map(function () {
@@ -45,11 +57,6 @@
                         $('#Previous').css("visibility", "visible");
                     }
                 }
-                if (ImageIndex == lengthImages - BottomLength) {
-                    if ($('#Next').css("visibility") == "visible") {
-                        $('#Next').css("visibility", "hidden");
-                    }
-                }
             }
             else {
                 $('#MainImage').attr('src', Imagesrc);
@@ -67,9 +74,6 @@
                     $('#slider .slides').animate({ 'margin-left': '-=' + widthImg }, 000);
                 }
                 $('#MainImage').attr('src', thumbnail_array[CurrImage]);
-                if (CurrImage == lengthImages - BottomLength) {
-                    $('#Next').css("visibility", "hidden");
-                }
                 if ($('#Previous').css("visibility") == "hidden") {  
                     $('#Previous').css("visibility", "visible");
                 }
@@ -108,17 +112,7 @@
         
     var CurrSlides = 0;
 
-    function myintervalfunction() {
-        $('#slider .slides').animate({ 'margin-left': '-=210' }, 10000,
-        function () {
-            if (CurrSlides == allslides) CurrSlides = 0;
-                else CurrSlides += 1;
-        CurrSlides += 1;
-        if (CurrSlides === thumbnail_array.length-2) {
-            $('#slider .slides').css('margin-left', '630');
-        }
-    });
-    };
+    
         
      setInterval( myintervalfunction , 3000);
         
@@ -178,7 +172,28 @@
                 </li> 
                 <li class="slide">
                     <img src="img/pic8.jpg" alt="Szczecin" width="200" height="120"/>
+                </li>
+                <li class="slide">
+                    <img src="img/pic9.jpg" alt="Thassos" width="200" height="120"/>
                 </li> 
+                <li class="slide">
+                    <img src="img/pic10.jpg" alt="Budapest" width="200" height="120"/>
+                </li> 
+                <li class="slide">
+                    <img src="img/pic11.jpg" alt="Pisa" width="200" height="120"/>
+                </li> 
+                <li class="slide">
+                    <img src="img/pic12.jpg" alt="Verona" width="200" height="120"/>
+                </li> 
+                <li class="slide">
+                    <img src="img/pic13.jpg" alt="Ljubljana" width="200" height="120"/>
+                </li> 
+                <li class="slide">
+                    <img src="img/pic14.jpg" alt="Bratislava" width="200" height="120"/>
+                </li> 
+                <li class="slide">
+                    <img src="img/pic15.jpg" alt="Zakopane" width="200" height="120"/>
+                </li>  
                 
             </ul>
        </div>
