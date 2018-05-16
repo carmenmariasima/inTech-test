@@ -26,6 +26,7 @@
     var widthImg = 210;
     var BottomLength = 1;
     var IndexDiff;
+    var allslides = $('.slides li').length;
 
     $('.slides li img').click(function () {
         var Imagesrc = $(this).attr('src');
@@ -55,6 +56,9 @@
             }
             }).fadeIn(3000);            
     });
+        
+    
+        
     $('#Next').click(function () {
         
             $('#MainImage').fadeOut('slow', function () {
@@ -70,8 +74,9 @@
                     $('#Previous').css("visibility", "visible");
                 }
             }).fadeIn(3000);
-        
+            $('.slides li:last').after($('.slides li:first'));
     });
+        
     $('#Previous').click(function () {
         $('#MainImage').fadeOut('slow', function () {
             CurrImage = CurrImage - 1;
@@ -83,7 +88,7 @@
             if ($('#Next').css("visibility") == "hidden") {
                 $('#Next').css("visibility", "visible");
             }
-
+            $('.slides li:first').after($('.slides li:last'));
         }).fadeIn(1000);
     });
 
@@ -91,23 +96,42 @@
     $('.slides li img').hover(function () {
         $(this).css('cursor', 'pointer');
         $(this).css({ 'filter': 'alpha(opacity=50)', 'opacity': '0.5' });
+       
+        
     }, function () {
         $(this).css('cursor', 'none');
         $(this).css({ 'filter': 'alpha(opacity=100)', 'opacity': '1' });
+        
     });
 
+        
+        
     var CurrSlides = 0;
 
-    setInterval(function () {
+    function myintervalfunction() {
         $('#slider .slides').animate({ 'margin-left': '-=210' }, 10000,
-            function () {
-                CurrSlides += 1;
-                if (CurrSlides === thumbnail_array.length-2) {
-                    $('#slider .slides').css('margin-left', '630');
-                }
-            });
-    }, 3000);
+        function () {
+            if (CurrSlides == allslides) CurrSlides = 0;
+                else CurrSlides += 1;
+        CurrSlides += 1;
+        if (CurrSlides === thumbnail_array.length-2) {
+            $('#slider .slides').css('margin-left', '630');
+        }
+    });
+    };
+        
+     setInterval( myintervalfunction , 3000);
+        
+    $( ".slide" ).mouseover(function() {
+        clearInterval(myintervalfunction );
+    });
+        
+    $( ".slide" ).mouseleave(function() {
+        setInterval( myintervalfunction , 3000);
+    });   
 });
+
+    //the images don't go over the slider    
     function set_body_height() {
         $('#mainpic img').height($(window).height());
     }
@@ -155,27 +179,7 @@
                 <li class="slide">
                     <img src="img/pic8.jpg" alt="Szczecin" width="200" height="120"/>
                 </li> 
-                <li class="slide">
-                    <img src="img/pic9.jpg" alt="Thassos" width="200" height="120"/>
-                </li> 
-                <li class="slide">
-                    <img src="img/pic10.jpg" alt="Budapest" width="200" height="120"/>
-                </li> 
-                <li class="slide">
-                    <img src="img/pic11.jpg" alt="Pisa" width="200" height="120"/>
-                </li> 
-                <li class="slide">
-                    <img src="img/pic12.jpg" alt="Verona" width="200" height="120"/>
-                </li> 
-                <li class="slide">
-                    <img src="img/pic13.jpg" alt="Ljubljana" width="200" height="120"/>
-                </li> 
-                <li class="slide">
-                    <img src="img/pic14.jpg" alt="Bratislava" width="200" height="120"/>
-                </li> 
-                <li class="slide">
-                    <img src="img/pic15.jpg" alt="Zakopane" width="200" height="120"/>
-                </li> 
+                
             </ul>
        </div>
     </div>
