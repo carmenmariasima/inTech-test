@@ -44,9 +44,13 @@
 #slider
 {
     margin: 0 auto;
-    overflow: hidden;
     position: fixed;
     bottom: 0;
+    animation: moveSlideshow 100s infinite;
+}
+
+#slider:hover{
+    animation-play-state: paused;
 }
 
 #slider .slides
@@ -72,4 +76,12 @@
 .slides img:hover{
     padding-bottom: 10px;
     -webkit-filter: grayscale(100%);
+    
 }
+
+@keyframes moveSlideshow {
+  0%    { left: 0; }
+  100%  { left: -200%; }
+}
+
+

@@ -9,49 +9,65 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-    function set_body_height() { 
-    
-    }
-        
+    /*
+    //animează slider-ul automat
+    //to do: să fie infinit
     function myintervalfunction() {
-        $('#slider .slides').animate({ 'margin-left': '-=210' }, 10000,
-        function () {
-            if (CurrSlides == allslides) CurrSlides = 0;
-                else CurrSlides += 1;
-        CurrSlides += 1;
-        if (CurrSlides === thumbnail_array.length-2) {
-            $('#slider .slides').css('margin-left', '10');
-        }
-    });
+        
+       // $('#slider .slides').animate({ 'margin-left': '-=210' }, 10000);
+        
+        //ce e comentat mai jos -> raționamentul era că dacă CurrSlider a ajuns la capăt, adică mai arată 7 slideuri, să se întoarcă la stânga sliderul, de la capăt la început. Dar nu funcționează.
+        
+        var thumbnail_array = $(".slides img").map(function () {
+        return $(this).attr("src");
+            }).get();
+        var ImageIndex = $(this).parent('.slide').index();
+        var BottomLength = 7;
+        var CurrSlides = ImageIndex;
+        var lengthImages = thumbnail_array.length;
+        if(CurrSlides < lengthImages - BottomLength)
+           {  
+               CurrSlides += 1;
+               $('#slider .slides').animate({ 'margin-left': '-=210' }, 10000);
+            }
+        else {
+        CurrSlides -=1; 
+        $('#slider .slides').animate({ 'margin-right': '-=210' }, 10000);
+             }
+        
     };
+        */
     $(document).ready(function () {
-
+    
+    //vector de thumbnails, prima imagine pornește de la prima poziție a vectorului, iar săgeata de stânga e dezactivată
     var thumbnail_array = $(".slides img").map(function () {
         return $(this).attr("src");
     }).get();
-
+        
     $('#MainImage').attr('src', thumbnail_array[0]); 
     $('#Previous').css("visibility", "hidden");
-
-    var lengthImages = thumbnail_array.length;
-    var CurrImage = 0;
-    var widthImg = 210;
-    var BottomLength = 1;
-    var IndexDiff;
-    var allslides = $('.slides li').length;
-
+        
+    //declarația variabilelor
+    var lengthImages = thumbnail_array.length; //lungimea listei de imagini
+    var CurrImage = 0; //ImageIndex actual
+    var widthImg = 0; //lățimea imaginii
+    var BottomLength = 7; //câte imagini arată în slide
+    var IndexDiff; //folosit pentru animație ca variabilă temporară
+    
+    
     $('.slides li img').click(function () {
         var Imagesrc = $(this).attr('src');
         var ImageIndex = $(this).parent('.slide').index();
            
+        //setăm cum se afișează imaginea mare și slide-uim imaginile spre dreapta
         $('#MainImage').fadeOut('slow', function () {
             if (ImageIndex <= lengthImages - BottomLength) {
                 IndexDiff = CurrImage;
                 CurrImage = ImageIndex;
                 IndexDiff = Math.abs(IndexDiff - CurrImage);
-                $('#slider .slides').animate({ 'margin-left': '-=' + widthImg * IndexDiff }, 4000);
+                $('#slider .slides').animate({ 'margin-right': '-=' + widthImg * IndexDiff }, 4000);
                 $('#MainImage').attr('src', Imagesrc);
-
+                //dacă indexul nu este pe prima imagine, săgeata stângă devine vizibilă
                 if (ImageIndex != 0) {
                     if ($('#Previous').css("visibility") == "hidden") {
                         $('#Previous').css("visibility", "visible");
@@ -65,26 +81,28 @@
     });
         
     
-        
+    //în momentul în care apăsăm săgeata dreapta, imaginea ulterioară celei curente este afișată ca imagine mare    
     $('#Next').click(function () {
-        
+            $('.slides li:last').after($('.slides li:first'));
             $('#MainImage').fadeOut('slow', function () {
-                CurrImage = CurrImage + 1; 
+                CurrImage += 1; 
                 if (CurrImage <= lengthImages - BottomLength) {
-                    $('#slider .slides').animate({ 'margin-left': '-=' + widthImg }, 000);
+               //     $('#slider .slides').animate({ 'margin-left': '-=' + widthImg }, 1000);
                 }
                 $('#MainImage').attr('src', thumbnail_array[CurrImage]);
                 if ($('#Previous').css("visibility") == "hidden") {  
                     $('#Previous').css("visibility", "visible");
                 }
-            }).fadeIn(3000);
-            $('.slides li:last').after($('.slides li:first'));
+            }).fadeIn(1000);
+            
     });
         
+    //în momentul în care apăsăm săgeata stânga, imaginea anterioară celei curente este afișată ca imagine mare
     $('#Previous').click(function () {
+        $('.slides li:first').after($('.slides li:last'));
         $('#MainImage').fadeOut('slow', function () {
-            CurrImage = CurrImage - 1;
-            $('#slider .slides').animate({ 'margin-left': '+=' + widthImg }, 4000);
+            CurrImage -= 1;
+            $('#slider .slides').animate({ 'margin-left': '+=' + widthImg }, 1000);
             $('#MainImage').attr('src', thumbnail_array[CurrImage]);
             if (CurrImage == 0) {
                 $('#Previous').css("visibility", "hidden");
@@ -92,40 +110,24 @@
             if ($('#Next').css("visibility") == "hidden") {
                 $('#Next').css("visibility", "visible");
             }
-            $('.slides li:first').after($('.slides li:last'));
         }).fadeIn(1000);
-    });
-
-
-    $('.slides li img').hover(function () {
-        $(this).css('cursor', 'pointer');
-        $(this).css({ 'filter': 'alpha(opacity=50)', 'opacity': '0.5' });
-       
+    }); 
+    /*
+    //pornim animația automată spre dreapta
+    window.setInterval(myintervalfunction, 3000);
         
-    }, function () {
-        $(this).css('cursor', 'none');
-        $(this).css({ 'filter': 'alpha(opacity=100)', 'opacity': '1' });
-        
-    });
-
-        
-        
-    var CurrSlides = 0;
-
-    
-        
-     setInterval( myintervalfunction , 3000);
-        
-    $( ".slide" ).mouseover(function() {
-        clearInterval(myintervalfunction );
+    //ar trebui să oprească animația când este mouseover și să repornească - not working
+    $( "#slider" ).mouseover(function() {
+        window.clearInterval(myintervalfunction);
     });
         
-    $( ".slide" ).mouseleave(function() {
-        setInterval( myintervalfunction , 3000);
+    $( "#slider" ).mouseleave(function() {
+        window.setInterval(myintervalfunction , 3000);
     });   
+    */
 });
 
-    //the images don't go over the slider    
+    //imaginea mare nu depășește limita ferestrei    
     function set_body_height() {
         $('#mainpic img').height($(window).height());
     }
@@ -147,6 +149,7 @@
                 <img id="Previous" src="img/leftarrow.png" class="PreButton" style="height: 50px;"/>
             </div>
        </div>
+      
        <div id="slider">
              <ul class="slides">
                 <li class="slide">
