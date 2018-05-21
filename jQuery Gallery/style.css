@@ -46,7 +46,7 @@
     margin: 0 auto;
     position: fixed;
     bottom: 0;
-    animation: moveSlideshow 100s infinite;
+    animation: moveSlideshow 60s infinite;
 }
 
 #slider:hover{
@@ -56,7 +56,7 @@
 #slider .slides
 {
     display: block;
-    width: 8000px;
+    width: 3150px;
     margin: 0;
     padding: 0;
 }
@@ -73,15 +73,43 @@
     background-color: black;
 }
 
-.slides img:hover{
-    padding-bottom: 10px;
+.slide img{
+    height: 120px;
+    width: 200px;
+}
+
+.slide img:hover{
+    margin-top: -10px;
+    height: 120px;
     -webkit-filter: grayscale(100%);
-    
+   
 }
 
 @keyframes moveSlideshow {
   0%    { left: 0; }
   100%  { left: -200%; }
+}
+
+/*mobile*/
+@media only screen and (max-width: 600px)
+{
+    
+}
+
+
+/*tableta*/
+@media only screen 
+and (min-width :601px)
+and (max-width :1200px){
+
+    
+}
+@media only screen
+    and (min-width :1200px){
+        
+        img{
+            max-width: 100%;
+        }   
 }
 
 
