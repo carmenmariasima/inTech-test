@@ -13,6 +13,9 @@
     right: 2%;
 }
 
+#child img{
+    height: 50px;
+}
 #child .PreButton
 {
     position: absolute;
@@ -47,6 +50,8 @@
     position: fixed;
     bottom: 0;
     animation: moveSlideshow 60s infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
 #slider:hover{
@@ -82,18 +87,29 @@
     margin-top: -10px;
     height: 120px;
     -webkit-filter: grayscale(100%);
+    transform: scale(1.1);
+    cursor: pointer;
    
 }
 
 @keyframes moveSlideshow {
   0%    { left: 0; }
-  100%  { left: -200%; }
+  100%  { left: -105%; }
 }
 
 /*mobile*/
-@media only screen and (max-width: 600px)
-{
+@media only screen and (max-width: 600px){
+    #MainDiv
+    {
+        position: fixed;
+        margin: 0;
+        overflow: hidden;
+        top: 22%;
+    }
     
+    #child img{
+    height: 20px;
+    }
 }
 
 
@@ -101,7 +117,18 @@
 @media only screen 
 and (min-width :601px)
 and (max-width :1200px){
-
+    #MainDiv
+    {
+        position: fixed;
+        margin: 0;
+        overflow: hidden;
+        top: 22%;
+    }
+    
+    #child img{
+    height: 40px;
+    }
+    
     
 }
 @media only screen

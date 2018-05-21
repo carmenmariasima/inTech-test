@@ -65,7 +65,7 @@
                 IndexDiff = CurrImage;
                 CurrImage = ImageIndex;
                 IndexDiff = Math.abs(IndexDiff - CurrImage);
-                $('#slider .slides').animate({ 'margin-right': '-=' + widthImg * IndexDiff }, 4000);
+                $('#slider .slides').animate({ 'margin-right': '-=' + widthImg * IndexDiff }, 2000);
                 $('#MainImage').attr('src', Imagesrc);
                 //dacă indexul nu este pe prima imagine, săgeata stângă devine vizibilă
                 if (ImageIndex != 0) {
@@ -127,7 +127,8 @@
     */
 });
 
-    //imaginea mare nu depășește limita ferestrei    
+    //imaginea mare nu depășește limita ferestrei pe desktop version
+    if($(window).width()>1200){
     function set_body_height() {
         $('#mainpic img').height($(window).height());
     }
@@ -135,7 +136,7 @@
         $(window).bind('resize', set_body_height);
         set_body_height();
     });
-    
+    }
     </script>
 </head>
     
@@ -145,8 +146,8 @@
            <div id="mainpic">
            <img src="img/pic1.jpg" alt="London" id="MainImage" width="100%"/></div>
             <div id="child">
-                <img id="Next" src="img/rightarrow.png" class="NextButton" style="height: 50px;"/>
-                <img id="Previous" src="img/leftarrow.png" class="PreButton" style="height: 50px;"/>
+                <img id="Next" src="img/rightarrow.png" class="NextButton"/>
+                <img id="Previous" src="img/leftarrow.png" class="PreButton"/>
             </div>
        </div>
       
