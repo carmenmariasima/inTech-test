@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+*{
+	font-family: 'Roboto Slab', serif;
+}
+
+.container{
+	width: 960px;
+	margin: auto;
+	margin-top: 44px;
+}
+
+
+
+
+.clear{
+	clear: both;
+}
+
+
+
+
+form input, form td, .company{
+	padding: 6px;
+    margin: 5px;
+    align-content: right;
+}
+
+.error {
+    display:none;
+    color:red;
+}
+
+
+$to      = 'myemail@email.com';
+$subject = "New Message From Your Website";
+$message = $_POST['message'];
+$headers = 'From: ' . $_POST['name'] . ' <myemail@email.com>' . "\r\n" .
+    'Reply-To: myemail@email.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
