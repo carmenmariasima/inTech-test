@@ -69,7 +69,9 @@
         mail($user,$usersubject,$usermessage,$userheaders);
         
     ?>  
-      
+      <!-- 
+        https://forum.freecodecamp.org/t/redirect-to-original-page-after-php-sumbmit-contact-form-message-3-columns-bootstrap-4/143898/8
+    -->
       
     <form id='test'>
         First Name *:
